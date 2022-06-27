@@ -391,14 +391,12 @@ header nav .form i:hover {
 }
 .portfolio .shuffle {
   display: flex;
-  justify-content: space-between;
-  width: 50%;
-  margin: 0 auto 50px;
+  justify-content: center;
 }
 .portfolio .shuffle li {
   text-transform: uppercase;
   color: var(--text-color);
-  padding: 12px 25px;
+  padding: 10px;
   transition: 0.3s;
 }
 .portfolio .shuffle li:hover, .portfolio .shuffle li.active {
@@ -409,6 +407,7 @@ header nav .form i:hover {
 .portfolio .img-boxes {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 60px;
 }
 .portfolio .img-boxes .img-box {
   position: relative;
@@ -784,9 +783,6 @@ header nav .form i:hover {
   height: 1px;
   background-color: var(--main-color);
 }
-.pricing .plans .plan .plan-foot {
-  
-}
 .pricing .plans .plan .plan-foot a {
   color: #333;
   display: block;
@@ -820,3 +816,210 @@ header nav .form i:hover {
   color: var(--main-color);
 }
 /* Pricing Section */
+
+/* Subscribe Section */
+
+.subscribe {
+  padding-top: var(--general-padding);
+  padding-bottom: var(--general-padding);
+  background-image: url(../images/endless-summer.jpg);
+  background-size: cover;
+  position: relative;
+  color: white;
+}
+.subscribe::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.subscribe .container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 991px) {
+  .subscribe .container {
+    flex-direction: column;
+  }
+}
+.subscribe form {
+  display: flex;
+  position: relative;
+  width: 500px;
+  max-width: 100%; /*to prevent overflow/scrolling in small screens*/
+}
+.subscribe form i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px;
+}
+.subscribe form input[type="email"] {
+  border: 1px solid white;
+  border-right: none;
+  background: none;
+  padding: 20px 20px 20px 60px;
+  width: calc(100% - 130px); /*130px for the button*/
+}
+.subscribe form input[type="submit"] {
+  width: 130px;
+  background-color: var(--main-color);
+  color: white;
+  padding: 10px 20px;
+  border: 1px solid white;
+  border-left: none;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+.subscribe form input[type="email"]:focus,
+.subscribe form input[type="submit"]:focus {
+  outline: none;
+}
+.subscribe form input[type="submit"]:hover {
+  background-color: #0aa3ce;
+  cursor: pointer;
+}
+.subscribe form ::placeholder {
+  color: white;
+}
+.subscribe p {
+  line-height: 1.8;
+  margin-left: 50px;
+}
+@media (max-width: 991px) {
+  .subscribe p {
+    margin: 30px 0 0; /*margin-top: 30px*/
+    text-align: center;
+  }
+}
+
+/* Subscribe Section */
+
+/* Contact Section */
+
+.contact {
+  padding-top: var(--general-padding);
+  padding-bottom: var(--general-padding);
+}
+.contact .content {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .contact .content {
+    flex-direction: column;
+  }
+}
+.contact .content form {
+  flex-basis: 70%;
+}
+.contact .content form .main-input {
+  padding: 20px;
+  display: block;
+  border: 1px solid #ccc;
+  margin-bottom: 30px;
+  width: 100%;
+}
+.contact .content form .main-input:focus {
+  outline: none;
+}
+.contact .content form textarea.main-input {
+  height: 200px;
+}
+.contact .content form input[type="submit"] {
+  background-color: var(--main-color);
+  color: white;
+  padding: 20px;
+  border: none;
+  display: flex;
+  margin-left: auto; /*to make it to the max right*/
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.contact .content .info {
+  flex-basis: 25%;
+}
+@media (max-width: 767px) {
+  .contact .content .info {
+    order: -1;
+    text-align: center;
+  }
+}
+.contact .content .info h4 {
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  font-weight: normal;
+  font-size: 18px;
+}
+.contact .content .info .phone {
+  display: block;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+.contact .content .info h4:nth-of-type(2) {
+  margin-top: 90px;
+}
+@media (max-width: 767px) {
+  .contact .content .info h4:nth-of-type(2) {
+    margin-top: 30px;
+  }
+}
+.contact .content .info address {
+  color: var(--text-color);
+  line-height: 2;
+}
+@media (max-width: 767px) {
+  .contact .content .info address {
+    margin-bottom: 40px;
+  }
+}
+
+/* Contact Section */
+
+/* Footer */
+
+.footer {
+  padding-top: calc(var(--general-padding) /2 );
+  padding-bottom: calc(var(--general-padding) /2 );
+  background-image: url(../images/endless-summer.jpg);
+  background-size: cover;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+.footer::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.footer .container {
+  position: relative;
+}
+.footer img {
+  margin-bottom: 20px;
+}
+.footer p:not(.copyright) {
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  border-bottom: 1px solid white;
+  font-size: 22px;
+  margin: 20px auto;
+  padding: 20px;
+  width: fit-content;
+}
+.footer .social-icons i {
+  padding: 10px 15px;
+}
+.footer .copyright {
+  margin-top: 65px;
+}
+.footer .copyright span {
+  font-weight: bold;
+  color: var(--main-color);
+}
+
+/* Footer */
