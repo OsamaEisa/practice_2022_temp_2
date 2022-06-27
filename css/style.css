@@ -43,6 +43,7 @@ a {
 
 :root {
   --main-color: #19c8fa;
+  --text-color: #777;
   --trans-color: rgba(15, 116, 143, 0.75);
   --general-padding: 100px
 }
@@ -83,12 +84,12 @@ a {
   width: 550px;
   margin: 0 auto 100px;
   line-height: 2;
-  color: #777;
+  color: var(--text-color);
   max-width: 100%; /*to keep it in its space and not flow out in mobile screens*/
 }
 /* Components */
 
-/* Header */
+/* Header *************************************************/
 
 header {
   position: absolute;
@@ -191,7 +192,7 @@ header nav .form i:hover {
 
 /* Header */
 
-/* Landing */
+/* Landing *************************************************/
 
 .landing {
   min-height: 100vh;
@@ -282,7 +283,7 @@ header nav .form i:hover {
 
 /* Landing */
 
-/* Services */
+/* Services *************************************************/
 
 .services {
   padding-top: var(--general-padding);
@@ -319,12 +320,12 @@ header nav .form i:hover {
   margin-bottom: 30px;
 }
 .srv-boxes .srv-box .srv-text p {
-  color: #777;
+  color: var(--text-color);
   line-height: 1.8;
 }
 /* Services */
 
-/* Design section */
+/* Design section *************************************************/
 
 .design {
   padding-top: var(--general-padding);
@@ -382,7 +383,7 @@ header nav .form i:hover {
 }
 /* Design section */
 
-/* Portfolio */
+/* Portfolio *************************************************/
 
 .portfolio {
   padding-top: var(--general-padding);
@@ -396,7 +397,7 @@ header nav .form i:hover {
 }
 .portfolio .shuffle li {
   text-transform: uppercase;
-  color: #777;
+  color: var(--text-color);
   padding: 12px 25px;
   transition: 0.3s;
 }
@@ -460,8 +461,362 @@ header nav .form i:hover {
 }
 /* Portfolio */
 
+/* Video Section *************************************************/
+.video {
+  position: relative;
+}
+.video::before {
+  content: "";
+  position: absolute;
+  width: 100%; height: 100%;
+  top: 0; left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.video video {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+.video .video-caption {
+  width: 100%;
+  position: absolute;
+  top: 50%; left: 0;
+  transform: translateY(-50%);
+  background-color: var(--trans-color);
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+.video .video-caption h2 {
+  margin: 0 0 30px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+.video .video-caption p {
+  margin-bottom: 20px;
+}
+.video .video-caption button {
+  background-color: #000;
+  color: white;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+}
+
 /* Video Section */
 
+/* About Section *************************************************/
 
+.about {
+  padding-top: var(--general-padding);
+  overflow: hidden;
+  text-align: center;
+}
+.about img {
+  max-width: 100%;
+  position: relative;
+  bottom: -120px;
+  margin-top: -120px;
+}
+@media (max-width: 767px) {
+  .about img {
+    bottom: -60px;
+    margin-top: -60px;
+  }
+}
+/* About Section */
 
-/* Video Section */
+/* Statistics Section *************************************************/
+
+.stats {
+  padding-top: var(--general-padding);
+  padding-bottom: var(--general-padding);
+  text-align: center;
+  background-image: url(../images/about-us.jpg);
+  background-size: cover;
+  position: relative;
+}
+.stats::before {
+  content: "";
+  position: absolute;
+  width: 100%; height: 100%;
+  top: 0; left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.stats .container {
+  position: relative; /*to make the z-index: auto and show above the overlay*/
+  display: flex;
+  flex-wrap: wrap;
+}
+.stats .container .stat {
+  background-color: var(--trans-color);
+  color: white;
+  padding: 50px;
+}
+@media (max-width: 767px) {
+  .stats .container .stat {
+    flex-basis: 100%;
+    border-bottom: 1px solid #AAA;
+  }
+}
+@media (min-width: 768px) {
+  .stats .container .stat {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .stats .container .stat {
+    flex-basis: 25%;
+  }
+}
+.stats .container .stat i {
+  width: 40px; height: 40px;
+  background-color: #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+}
+.stats .container .stat h3 {
+  font-size: 50px;
+  margin: 0 0 20px
+}
+.stats .container .stat p {
+  font-size: 14px;
+}
+/* Statistics Section */
+
+/* TestSkills Section ************************************************/
+
+.test-skills {
+  padding-top: var(--general-padding);
+  padding-bottom: var(--general-padding);
+  background-color: #f7f7f7;
+}
+.test-skills .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media (min-width: 992px) {
+  .test-skills .container > div {
+    flex-basis: 45%;
+  }
+}
+/* @media (max-width: 991px) {
+  .test-skills .container div:first-child {
+    margin-bottom: 40px;
+  }
+} */
+.test-skills .container > div > h3 {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 0 30px;
+}
+.test-skills .container > div > p {
+  color: var(--text-color);
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 60px;
+}
+.test-skills .testimonials .testimonial {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.test-skills .testimonials .testimonial img {
+  width: 100px;
+  border-radius: 50%;
+  margin-right: 50px;
+}
+@media (max-width: 767px) {
+  .test-skills .testimonials .testimonial {
+    flex-direction: column;
+    text-align: center;
+  }
+  .test-skills .testimonials .testimonial img {
+    margin: 0 auto 20px;
+  }
+}
+.test-skills .testimonials .testimonial .text {
+  border-bottom: 1px solid #CCC;
+  line-height: 1.8;
+}
+.test-skills .testimonials .testimonial .text p {
+  color: var(--text-color);
+  font-size: 14px;
+  text-align: right;
+  margin-bottom: 10px;
+}
+.test-skills .testimonials .bullets {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+}
+.test-skills .testimonials .bullets li {
+  width: 17px;
+  height: 17px;
+  margin-right: 8px;
+  border-radius: 50%;
+  color: #DDD;
+  border: 1px solid #AAA;
+  transition: 0.3s;
+}
+.test-skills .testimonials .bullets li:hover, 
+.test-skills .testimonials .bullets li.active {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+  cursor: pointer;
+}
+.test-skills .skills .prog-holder {
+  margin-bottom: 40px;
+}
+.test-skills .skills .prog-holder h4 {
+  text-transform: uppercase;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+.test-skills .skills .prog-holder .prog {
+  background-color: #dedadc;
+  height: 30px;
+}
+.test-skills .skills .prog-holder .prog span {
+  display: block;
+  background-color: var(--main-color);
+  height: 100%;
+  position: relative;
+}
+.test-skills .prog-holder .prog span::before {
+  content: attr(data-progress);
+  background-color: black;
+  color: white;
+  position: absolute;
+  top: -40px; right: -18px;
+  width: 40px;
+  padding: 5px 0;
+  text-align: center;
+  border-radius: 4px;
+}
+.test-skills .prog-holder .prog span::after {
+  content: "";
+  position: absolute;
+  top: -15px; right: -8px;
+  border-style: solid;
+  border-width: 8px;
+  border-color: black transparent transparent;
+}
+/* TestSkills Section */
+
+/* Pricing Section ******************************************************/
+
+.pricing {
+  padding-top: var(--general-padding);
+  padding-bottom: var(--general-padding);
+}
+.pricing .plans {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.pricing .plans .plan {
+  flex-basis: 20%;
+  text-align: center;
+  background-color: #fcfcfc;
+}
+@media (max-width: 991px) {
+  .pricing .plans .plan {
+    flex-basis: 45%;
+  }
+}
+@media (max-width: 767px) {
+  .pricing .plans .plan {
+    flex-basis: 100%;
+  }
+}
+.pricing .plans .plan .plan-head {
+  border-top: 1px solid var(--main-color);
+  border-bottom: 1px solid var(--main-color);
+  padding: 40px 20px;
+}
+.pricing .plans .plan .plan-head h3 {
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.pricing .plans .plan .plan-head span {
+  font-size: 45px;
+  position: relative;
+  font-weight: 600;
+}
+.pricing .plans .plan .plan-head span::before,
+.pricing .plans .plan .plan-head span::after {
+  position: absolute;
+  font-weight: normal;
+}
+.pricing .plans .plan .plan-head span::before {
+  content: "$";
+  top: 7px;
+  left: -25px;
+  font-size: 20px;
+}
+.pricing .plans .plan .plan-head span::after {
+  content: "/MO";
+  font-size: 15px;
+  bottom: 10px;
+  right: -42px;
+}
+.pricing .plans .plan ul {
+  border-bottom: 1px solid var(--main-color);
+}
+.pricing .plans .plan ul li {
+  padding: 20px;
+  position: relative;
+}
+.pricing .plans .plan ul li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 1px;
+  background-color: var(--main-color);
+}
+.pricing .plans .plan .plan-foot {
+  
+}
+.pricing .plans .plan .plan-foot a {
+  color: #333;
+  display: block;
+  padding: 10px 25px;
+  border: 1px solid var(--main-color);
+  width: fit-content;
+  margin: 30px auto;
+  transition: 0.3s;
+}
+.pricing .plans .plan .plan-foot a:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+.pricing .pr-contact {
+  margin: 50px auto 0px;
+  text-align: center;
+}
+.pricing .pr-contact .pr-contact-text {
+  margin-bottom: 35px;
+}
+.pricing .pr-contact .pr-contact-link {
+  display: inline-block;
+  padding: 12px 35px;
+  background-color: var(--main-color);
+  color: white;
+  transition: background 0.3s;
+}
+.pricing .pr-contact .pr-contact-link:hover {
+  background-color: transparent;
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
+}
+/* Pricing Section */
